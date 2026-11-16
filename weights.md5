@@ -1,0 +1,6 @@
+1fac2dfb4b7238c688bb0c7bacce91c5  models/lidm/kitti/sem2lidar/model.ckpt
+33b41f478a74ac2de307b2011ef59338  pretrained_weights/kitti/rangenet/backbone
+7733857d98a3a027a71a0791ff862793  pretrained_weights/kitti/rangenet/segmentation_decoder
+334d5f51a253e4c395fc32e9b019e114  pretrained_weights/kitti/rangenet/segmentation_head
+b18837031cbc0cbde8f0a3b46d0a5955  pretrained_weights/kitti/cenet/SalsaNext_valid_best
+50495ba53b05727b89c6dcc3eff594dc  models/first_stage_models/kitti/f_c2_p4_wo_logscale/model.ckpt

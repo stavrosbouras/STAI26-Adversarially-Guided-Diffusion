@@ -1,0 +1,42 @@
+--- a/lidm/models/autoencoder.py
++++ b/lidm/models/autoencoder.py
+@@ -83,7 +83,7 @@
+                     print(f"{context}: Restored training weights")
+ 
+     def init_from_ckpt(self, path, ignore_keys=list()):
+-        sd = torch.load(path, map_location="cpu")["state_dict"]
++        sd = torch.load(path, map_location="cpu", weights_only=False)["state_dict"]
+         keys = list(sd.keys())
+         for k in keys:
+             for ik in ignore_keys:
+@@ -335,7 +335,7 @@
+             self.init_from_ckpt(ckpt_path, ignore_keys=ignore_keys)
+ 
+     def init_from_ckpt(self, path, ignore_keys=list()):
+-        sd = torch.load(path, map_location="cpu")["state_dict"]
++        sd = torch.load(path, map_location="cpu", weights_only=False)["state_dict"]
+         keys = list(sd.keys())
+         for k in keys:
+             for ik in ignore_keys:
+--- a/lidm/models/diffusion/classifier.py
++++ b/lidm/models/diffusion/classifier.py
+@@ -68,7 +68,7 @@
+         self.weight_decay = weight_decay
+ 
+     def init_from_ckpt(self, path, ignore_keys=list(), only_model=False):
+-        sd = torch.load(path, map_location="cpu")
++        sd = torch.load(path, map_location="cpu", weights_only=False)
+         if "state_dict" in list(sd.keys()):
+             sd = sd["state_dict"]
+         keys = list(sd.keys())
+--- a/lidm/models/diffusion/ddpm.py
++++ b/lidm/models/diffusion/ddpm.py
+@@ -184,7 +184,7 @@
+                     self.print_fn(f"{context}: Restored training weights")
+ 
+     def init_from_ckpt(self, path, ignore_keys=list(), only_model=False):
+-        sd = torch.load(path, map_location="cpu")
++        sd = torch.load(path, map_location="cpu", weights_only=False)
+         if "state_dict" in list(sd.keys()):
+             sd = sd["state_dict"]
+         keys = list(sd.keys())

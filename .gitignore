@@ -1,0 +1,16 @@
+# weights and data
+/models/
+/pretrained_weights/
+/dataset/
+*.pt
+*.ckpt
+*.pth
+
+# run output folders
+cond_adv_*/
+fgsm_*/
+segpgd_*/
+targeted_*/
+
+# python
+__pycache__/
