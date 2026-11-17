@@ -131,7 +131,7 @@ Paper: FGSM ε ∈ {0.015686, 0.062745, 0.12}; SegPGD ε ∈ {0.004, 0.015686, 0
 
 #### Evaluation
 
-Each script reads a run folder; `--also_range NAME=path` adds extra sample files.
+Each script reads a run folder. `eval_frid.py`, `eval_frid_cenet.py` and `eval_chamfer.py` automatically use `clean_ranges.pt` and the baseline samples (`adv_eps*.pt`) in it; for a guided-attack run, add its adversarial samples with `--also_range ours=<run_dir>/adv_ranges.pt`.
 
 ```bash
 python eval_frid.py --run_dir <dir> --kitti_root $KITTI --kitti_seq 08 --frid_n 1024 [--also_range NAME=path ...]
